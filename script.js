@@ -10,6 +10,18 @@ class Traveler {
     get nome() {
         return this._nome
     }
+    set comida (comida){
+        this._comida = comida
+    }
+    get comida(){
+        return this._comida
+    }
+    set isHelthy(helt){
+        this._isHelthy = helt
+    }
+    get isHelthy(){
+        return this._isHelthy
+    }
     hunt = () => {
         this.comida += 2
     }
@@ -28,9 +40,19 @@ class Wagon {
         this.capacidade = capacidade
         this.passageiros = []
     }
+    set passageiro(travler){
+     this._passageiros.push(travler) 
+    }
+    get passageiro(){
+        return this._passageiros
+    }
     set capacidade(int){
         this._capacidade = int
     }
+    get capacidade(){
+        return this._capacidade
+    }
+
     getAvailableSeatCount = () => {
         let emptySeat = this.capacidade - this.passageiros.length
         return emptySeat
@@ -79,4 +101,3 @@ juan.eat(); // juan agora está com fome (doente)
  
 console.log(`${wagon.shouldQuarantine()} should be true since juan is sick`);
 console.log(`${wagon.totalFood()} should be 3`);
-
