@@ -4,6 +4,12 @@ class Traveler {
         this.comida = 1
         this.isHelthy = true
     }
+    set nome(nome){
+        this._nome = nome
+    }
+    get nome() {
+        return this._nome
+    }
     hunt = () => {
         this.comida += 2
     }
@@ -21,6 +27,9 @@ class Wagon {
     constructor (capacidade){
         this.capacidade = capacidade
         this.passageiros = []
+    }
+    set capacidade(int){
+        this._capacidade = int
     }
     getAvailableSeatCount = () => {
         let emptySeat = this.capacidade - this.passageiros.length
